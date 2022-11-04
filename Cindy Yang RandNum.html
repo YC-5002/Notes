@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function initialize(){
+            randNumOutput = document.getElementById("rndnum");
+            randNum2 = document.getElementById("randNum2");
+            total = document.getElementById("total");
+            generateRandomNumber();
+        }
+        function generateRandomNumber(){
+            rndNumber = parseInt(Math.random()*6 + 1);
+            rndNumber2 = parseInt(Math.random()*6 + 1);
+            sum = rndNumber + rndNumber2;
+            display();
+        }
+        function display(){
+            randNumOutput.innerHTML = rndNumber;
+            randNum2.innerHTML = rndNumber2;
+            total.innerHTML = sum;
+        }
+    </script>
+</head>
+<body onload="initialize();">
+    Dice One: <span id="rndnum">0</span><br>
+    Dice Two: <span id="randNum2">0</span><br>
+    Total: <span id="total">0</span><br>
+    <button onclick="generateRandomNumber(randNumOutput, randNum2);">
+        Generate A New Random Number
+    </button>
+
+</body>
+</html>
